@@ -1,0 +1,41 @@
+<!--pages/forum/forum.wxml-->
+<view class='custom' style="padding-top:{{statusBarHeight}}px">
+<text class='_title'>策略交易论坛</text>
+<!-- <view class='to_total search'>
+  <image src='../../image/icon/search.png' bindtap='query'></image>
+  <input type='text' placeholder='输入你想要的内容' confirm-type='search' value="{{inputValue}}" bindinput='inputBind' bindconfirm='query'></input>          
+</view> -->
+<view class='divLine_fixed'></view>
+</view>
+
+<scroll-view scroll-y="true" class="container" style='height:800px;padding-top:{{statusBarHeight+55}}px;' bindscrolltoupper="upper" upper-threshold="10" lower-threshold="5" bindscrolltolower="lower"  scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+  <block wx:for="{{list}}" wx:key="item">
+    <view class='userInfo'>
+      <view class='userLeft'>
+        <view class='user-avater'>
+          <image class='userIcon' src='../../image/userHead/{{item.userHead}}'></image>
+        </view>
+        <view class='user-name'>{{item.userName}}</view>
+      </view>
+      <view class='userRight'>{{item.recentTime}}</view>
+    </view>
+    <view class='all' bindtap='toItem'>
+      <view class='cont'>
+        <text>{{item.title}}</text> 
+        <view>
+          <text class='topic'>{{item.topic}}</text>{{item.subTitle}}
+        </view>
+      </view>
+      <view wx:if="{{item.image}}" class='imgSize'>
+        <image src='../../image/mainImg/{{item.image}}' mode="scaleToFill" class='mainImg'></image>
+      </view>
+    </view>
+    <view class='foot'>
+      <image class='icon' src='../../image/icon/read.png'></image>
+      <text class='text'>{{item.readNum}}</text>
+      <image class='icon' src='../../image/icon/comment.png'></image>
+      <text class='text'>{{item.commentNum}}</text>
+    </view>
+    <view class="divLine"></view>
+  </block>
+</scroll-view>

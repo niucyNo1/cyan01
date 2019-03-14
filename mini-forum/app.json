@@ -1,0 +1,20 @@
+{
+  "pages": [
+    "pages/forum/forum",
+    "pages/forumItem/forumItem"
+  ],
+  "subpackages": [
+    {
+      "root": "start",
+      "pages": [
+        "index/index"
+      ]
+    }
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarTitleText": "weChat",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  }
+}

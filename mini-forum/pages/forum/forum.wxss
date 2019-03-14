@@ -1,0 +1,57 @@
+/* pages/forum/forum.wxss */
+._title{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.search
+{
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width:50%;
+  height:55rpx;
+  background-color:whitesmoke;
+  margin-left: 15%;
+  margin-bottom: 20rpx;
+  border:1rpx solid whitesmoke;
+  border-radius: 40rpx;
+  z-index: -1;
+}
+
+/* 搜索框小图标 */
+.search image
+{ 
+  width:40rpx;
+  height:40rpx;
+  padding-left:20rpx;
+}
+/* 搜索框提示文字样式 */
+.search input
+{ 
+  font-size:small;
+  padding-left: 20rpx;
+}
+
+
+.cont{
+  margin: 0 60rpx 15rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap
+}
+.cont text{
+  font-weight: bold;
+}
+.imgSize{
+  display:flex;                 
+  justify-content: center;
+}
+.mainImg{
+  height: 350rpx;
+  width: 90%;
+  border-radius: 5%;
+}

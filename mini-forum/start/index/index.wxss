@@ -1,0 +1,20 @@
+/**index.wxss**/
+.startImg{
+  width: 100%;
+}
+
+
+.startBtn{
+  position: absolute;
+  margin-top: 135%;
+  margin-left: 22%;
+  width: 58%;
+  height: 12%;
+  display: flex;
+  border-color: transparent;
+   
+}
+button[plain]{
+  border: 0;
+}
+

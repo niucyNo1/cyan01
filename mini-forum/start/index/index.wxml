@@ -1,0 +1,10 @@
+<!--index.wxml-->
+<view class="custom" style="padding-top:{{statusBarHeight}}px;background-color:#3fb0ff">
+  <view class="title">策略交易</view>
+</view>
+<view class='container' style='padding-top:{{statusBarHeight+48}}px'>
+  <image class='startImg' src='../image/mainImg/start.jpg' mode='widthFix'></image>
+  <button wx:if="{{canIUse}}" open-type='getUserInfo' bindgetuserinfo='bindGetUserInfo' class='startBtn' plain='true'>
+  <image src='../image/mainImg/startBtn.png' mode='widthFix'></image></button>
+  <view wx:else>请升级微信版本</view>
+</view>

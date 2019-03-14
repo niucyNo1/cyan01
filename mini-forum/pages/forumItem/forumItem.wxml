@@ -1,0 +1,68 @@
+<!--pages/indexItem.wxml-->
+<view class="custom" style="padding-top:{{statusBarHeight}}px">
+  <view class='title'>
+    <image class='to' src='../../image/icon/back.png' bindtap='back'></image>
+    <button open-type="share" style='display: flex;border-color: transparent;' plain='true'>
+      <image  class='to'  src='../../image/icon/share.png' mode='widthFix'></image>
+    </button>
+    
+  </view>
+  <text class='_title1'>帖子详情</text>
+  
+  <view class='divLine_fixed'></view>
+</view>
+
+<view class='container' style='padding-top:{{statusBarHeight+55}}px'>
+  <view class='userInfo'>
+    <view class='userLeft'>
+      <view class='user-avater'>
+        <image class='userIcon' src='../../image/userHead/{{user.userHead}}'></image>
+      </view>
+      <view class='user-name'>{{user.userName}}</view>
+    </view>
+  </view>
+  <view style='margin:0 50rpx;'>
+    <text class='topic'>{{topic}}</text>{{commentContent}}
+  </view>
+  <view style='display:flex;margin:25px 13px;'>
+    分享至
+    <image class='share' style='margin-left:25rpx' src='../../image/icon/qrcode.png' bindtap='code'></image>
+    <button open-type="share" style='display: flex;border-color: transparent;margin-left:0' plain='true'>
+      <image class='share' src='../../image/icon/wx.png' bindtap='share'></image>
+    </button>
+  </view>
+
+  <view class='comment'>
+    <block wx:for="{{user.comments}}" wx:key="item" wx:index="idx">
+      <view class="divLine"></view>
+      <view class='userInfo'>
+        <view class='userLeft'>
+          <view class='user-avater'>
+            <image class='userIcon' src='../../image/userHead/{{item.userHead}}'></image>
+          </view>
+          <view>
+            <view class='user-name'>{{item.userName}}</view>
+          </view>
+        </view>
+        <view class='userRight'>{{index+1}}楼</view>
+      </view>
+      <view class='responseContent'>{{item.content}}</view>
+      <view class='foot'>
+        <view style='margin-left:40rpx;'>{{item.publishTime}}</view>
+        <view >
+          <image wx:if="{{item.collected===1}}" class='icon' src='../../image/icon/zand.png' data-index='{{index}}' data-response-id='{{item.responseId}}' bindtap="toCollect"></image>
+          <image wx:else class='icon' src='../../image/icon/zan.png' data-index='{{index}}' data-response-id='{{item.responseId}}' bindtap="toCollect"></image>
+          <text style='margin-left:10rpx;'>{{item.likeNum}}</text>
+        </view>
+      </view>
+    </block>
+    <view class="divLine" style='margin-bottom:100rpx;'></view>
+  </view>
+</view>
+
+
+<view class="logo">
+  <view class="logo_ground">
+    <button style='background-color: #3fb0ff;border-radius: 0;' open-type="share">分享</button>
+  </view>
+</view>
